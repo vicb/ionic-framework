@@ -74,6 +74,8 @@ export const config: Config = {
         'ion-tabs',
         'ion-tab',
         'ion-tab-bar',
+
+        'ion-virtual-scroll'
       ],
       routerLinkComponents: [
         'ion-card',
@@ -105,8 +107,7 @@ export const config: Config = {
       esmLoaderPath: '../loader'
     },
     {
-      type: 'dist-custom-elements-bundle',
-      dir: 'components',
+      type: 'dist-custom-elements-bundle'
     },
     {
       type: 'docs-readme',

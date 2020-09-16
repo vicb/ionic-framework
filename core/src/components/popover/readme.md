@@ -228,30 +228,30 @@ export default {
 
 ## Properties
 
-| Property                 | Attribute          | Description                                                                                                                                                                                                            | Type                                                    | Default     |
-| ------------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------- |
-| `animated`               | `animated`         | If `true`, the popover will animate.                                                                                                                                                                                   | `boolean`                                               | `true`      |
-| `backdropDismiss`        | `backdrop-dismiss` | If `true`, the popover will be dismissed when the backdrop is clicked.                                                                                                                                                 | `boolean`                                               | `true`      |
-| `component` _(required)_ | `component`        | The component to display inside of the popover.                                                                                                                                                                        | `Function \| HTMLElement \| null \| string`             | `undefined` |
-| `componentProps`         | --                 | The data to pass to the popover component.                                                                                                                                                                             | `undefined \| { [key: string]: any; }`                  | `undefined` |
-| `cssClass`               | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                       | `string \| string[] \| undefined`                       | `undefined` |
-| `enterAnimation`         | --                 | Animation to use when the popover is presented.                                                                                                                                                                        | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `event`                  | `event`            | The event to pass to the popover animation.                                                                                                                                                                            | `any`                                                   | `undefined` |
-| `keyboardClose`          | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                 | `boolean`                                               | `true`      |
-| `leaveAnimation`         | --                 | Animation to use when the popover is dismissed.                                                                                                                                                                        | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `mode`                   | `mode`             | The mode determines which platform styles to use.                                                                                                                                                                      | `"ios" \| "md"`                                         | `undefined` |
-| `showBackdrop`           | `show-backdrop`    | If `true`, a backdrop will be displayed behind the popover.                                                                                                                                                            | `boolean`                                               | `true`      |
-| `translucent`            | `translucent`      | If `true`, the popover will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). | `boolean`                                               | `false`     |
+| Property                 | Attribute          | Description                                                                                                                                                                                                            | Type                              | Default     |
+| ------------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `animated`               | `animated`         | If `true`, the popover will animate.                                                                                                                                                                                   | `boolean`                         | `true`      |
+| `backdropDismiss`        | `backdrop-dismiss` | If `true`, the popover will be dismissed when the backdrop is clicked.                                                                                                                                                 | `boolean`                         | `true`      |
+| `component` _(required)_ | `component`        | The component to display inside of the popover.                                                                                                                                                                        | `any`                             | `undefined` |
+| `componentProps`         | `component-props`  | The data to pass to the popover component.                                                                                                                                                                             | `any`                             | `undefined` |
+| `cssClass`               | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                       | `string \| string[] \| undefined` | `undefined` |
+| `enterAnimation`         | `enter-animation`  | Animation to use when the popover is presented.                                                                                                                                                                        | `any`                             | `undefined` |
+| `event`                  | `event`            | The event to pass to the popover animation.                                                                                                                                                                            | `any`                             | `undefined` |
+| `keyboardClose`          | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                 | `boolean`                         | `true`      |
+| `leaveAnimation`         | `leave-animation`  | Animation to use when the popover is dismissed.                                                                                                                                                                        | `any`                             | `undefined` |
+| `mode`                   | `mode`             | The mode determines which platform styles to use.                                                                                                                                                                      | `"ios" \| "md"`                   | `undefined` |
+| `showBackdrop`           | `show-backdrop`    | If `true`, a backdrop will be displayed behind the popover.                                                                                                                                                            | `boolean`                         | `true`      |
+| `translucent`            | `translucent`      | If `true`, the popover will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). | `boolean`                         | `false`     |
 
 
 ## Events
 
-| Event                   | Description                               | Type                                   |
-| ----------------------- | ----------------------------------------- | -------------------------------------- |
-| `ionPopoverDidDismiss`  | Emitted after the popover has dismissed.  | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionPopoverDidPresent`  | Emitted after the popover has presented.  | `CustomEvent<void>`                    |
-| `ionPopoverWillDismiss` | Emitted before the popover has dismissed. | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionPopoverWillPresent` | Emitted before the popover has presented. | `CustomEvent<void>`                    |
+| Event                   | Description                               | Type                |
+| ----------------------- | ----------------------------------------- | ------------------- |
+| `ionPopoverDidDismiss`  | Emitted after the popover has dismissed.  | `CustomEvent<any>`  |
+| `ionPopoverDidPresent`  | Emitted after the popover has presented.  | `CustomEvent<void>` |
+| `ionPopoverWillDismiss` | Emitted before the popover has dismissed. | `CustomEvent<any>`  |
+| `ionPopoverWillPresent` | Emitted before the popover has presented. | `CustomEvent<void>` |
 
 
 ## Methods
@@ -272,7 +272,7 @@ Returns a promise that resolves when the popover did dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 
@@ -282,7 +282,7 @@ Returns a promise that resolves when the popover will dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 

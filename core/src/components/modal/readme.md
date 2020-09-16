@@ -650,30 +650,30 @@ export default {
 
 ## Properties
 
-| Property                 | Attribute          | Description                                                                                                                                                       | Type                                                    | Default     |
-| ------------------------ | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------- |
-| `animated`               | `animated`         | If `true`, the modal will animate.                                                                                                                                | `boolean`                                               | `true`      |
-| `backdropDismiss`        | `backdrop-dismiss` | If `true`, the modal will be dismissed when the backdrop is clicked.                                                                                              | `boolean`                                               | `true`      |
-| `component` _(required)_ | `component`        | The component to display inside of the modal.                                                                                                                     | `Function \| HTMLElement \| null \| string`             | `undefined` |
-| `componentProps`         | --                 | The data to pass to the modal component.                                                                                                                          | `undefined \| { [key: string]: any; }`                  | `undefined` |
-| `cssClass`               | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                  | `string \| string[] \| undefined`                       | `undefined` |
-| `enterAnimation`         | --                 | Animation to use when the modal is presented.                                                                                                                     | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `keyboardClose`          | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                            | `boolean`                                               | `true`      |
-| `leaveAnimation`         | --                 | Animation to use when the modal is dismissed.                                                                                                                     | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `mode`                   | `mode`             | The mode determines which platform styles to use.                                                                                                                 | `"ios" \| "md"`                                         | `undefined` |
-| `presentingElement`      | --                 | The element that presented the modal. This is used for card presentation effects and for stacking multiple modals on top of each other. Only applies in iOS mode. | `HTMLElement \| undefined`                              | `undefined` |
-| `showBackdrop`           | `show-backdrop`    | If `true`, a backdrop will be displayed behind the modal.                                                                                                         | `boolean`                                               | `true`      |
-| `swipeToClose`           | `swipe-to-close`   | If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.                                                                                          | `boolean`                                               | `false`     |
+| Property                 | Attribute          | Description                                                                                                                                                       | Type                              | Default     |
+| ------------------------ | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `animated`               | `animated`         | If `true`, the modal will animate.                                                                                                                                | `boolean`                         | `true`      |
+| `backdropDismiss`        | `backdrop-dismiss` | If `true`, the modal will be dismissed when the backdrop is clicked.                                                                                              | `boolean`                         | `true`      |
+| `component` _(required)_ | `component`        | The component to display inside of the modal.                                                                                                                     | `any`                             | `undefined` |
+| `componentProps`         | `component-props`  | The data to pass to the modal component.                                                                                                                          | `any`                             | `undefined` |
+| `cssClass`               | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                  | `string \| string[] \| undefined` | `undefined` |
+| `enterAnimation`         | `enter-animation`  | Animation to use when the modal is presented.                                                                                                                     | `any`                             | `undefined` |
+| `keyboardClose`          | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                            | `boolean`                         | `true`      |
+| `leaveAnimation`         | `leave-animation`  | Animation to use when the modal is dismissed.                                                                                                                     | `any`                             | `undefined` |
+| `mode`                   | `mode`             | The mode determines which platform styles to use.                                                                                                                 | `"ios" \| "md"`                   | `undefined` |
+| `presentingElement`      | --                 | The element that presented the modal. This is used for card presentation effects and for stacking multiple modals on top of each other. Only applies in iOS mode. | `HTMLElement \| undefined`        | `undefined` |
+| `showBackdrop`           | `show-backdrop`    | If `true`, a backdrop will be displayed behind the modal.                                                                                                         | `boolean`                         | `true`      |
+| `swipeToClose`           | `swipe-to-close`   | If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.                                                                                          | `boolean`                         | `false`     |
 
 
 ## Events
 
-| Event                 | Description                             | Type                                   |
-| --------------------- | --------------------------------------- | -------------------------------------- |
-| `ionModalDidDismiss`  | Emitted after the modal has dismissed.  | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionModalDidPresent`  | Emitted after the modal has presented.  | `CustomEvent<void>`                    |
-| `ionModalWillDismiss` | Emitted before the modal has dismissed. | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionModalWillPresent` | Emitted before the modal has presented. | `CustomEvent<void>`                    |
+| Event                 | Description                             | Type                |
+| --------------------- | --------------------------------------- | ------------------- |
+| `ionModalDidDismiss`  | Emitted after the modal has dismissed.  | `CustomEvent<any>`  |
+| `ionModalDidPresent`  | Emitted after the modal has presented.  | `CustomEvent<void>` |
+| `ionModalWillDismiss` | Emitted before the modal has dismissed. | `CustomEvent<any>`  |
+| `ionModalWillPresent` | Emitted before the modal has presented. | `CustomEvent<void>` |
 
 
 ## Methods
@@ -694,7 +694,7 @@ Returns a promise that resolves when the modal did dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 
@@ -704,7 +704,7 @@ Returns a promise that resolves when the modal will dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 

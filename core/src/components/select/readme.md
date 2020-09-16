@@ -1281,7 +1281,7 @@ export default defineComponent({
 | `cancelText`       | `cancel-text`       | The text to display on the cancel button.                                                                                                                                                                                                                                                                                                                 | `string`                                                                             | `'Cancel'`     |
 | `compareWith`      | `compare-with`      | A property name or function used to compare object values                                                                                                                                                                                                                                                                                                 | `((currentValue: any, compareValue: any) => boolean) \| null \| string \| undefined` | `undefined`    |
 | `disabled`         | `disabled`          | If `true`, the user cannot interact with the select.                                                                                                                                                                                                                                                                                                      | `boolean`                                                                            | `false`        |
-| `interface`        | `interface`         | The interface the select should use: `action-sheet`, `popover` or `alert`.                                                                                                                                                                                                                                                                                | `"action-sheet" \| "alert" \| "popover"`                                             | `'alert'`      |
+| `interface`        | `interface`         | The interface the select should use: `action-sheet`, `popover` or `alert`.                                                                                                                                                                                                                                                                                | `any`                                                                                | `'alert'`      |
 | `interfaceOptions` | `interface-options` | Any additional options that the `alert`, `action-sheet` or `popover` interface can take. See the [ion-alert docs](../alert), the [ion-action-sheet docs](../action-sheet) and the [ion-popover docs](../popover) for the create options for each interface.  Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface. | `any`                                                                                | `{}`           |
 | `mode`             | `mode`              | The mode determines which platform styles to use.                                                                                                                                                                                                                                                                                                         | `"ios" \| "md"`                                                                      | `undefined`    |
 | `multiple`         | `multiple`          | If `true`, the select can accept multiple values.                                                                                                                                                                                                                                                                                                         | `boolean`                                                                            | `false`        |
@@ -1294,12 +1294,12 @@ export default defineComponent({
 
 ## Events
 
-| Event       | Description                              | Type                                        |
-| ----------- | ---------------------------------------- | ------------------------------------------- |
-| `ionBlur`   | Emitted when the select loses focus.     | `CustomEvent<void>`                         |
-| `ionCancel` | Emitted when the selection is cancelled. | `CustomEvent<void>`                         |
-| `ionChange` | Emitted when the value has changed.      | `CustomEvent<SelectChangeEventDetail<any>>` |
-| `ionFocus`  | Emitted when the select has focus.       | `CustomEvent<void>`                         |
+| Event       | Description                              | Type                |
+| ----------- | ---------------------------------------- | ------------------- |
+| `ionBlur`   | Emitted when the select loses focus.     | `CustomEvent<void>` |
+| `ionCancel` | Emitted when the selection is cancelled. | `CustomEvent<void>` |
+| `ionChange` | Emitted when the value has changed.      | `CustomEvent<any>`  |
+| `ionFocus`  | Emitted when the select has focus.       | `CustomEvent<void>` |
 
 
 ## Methods

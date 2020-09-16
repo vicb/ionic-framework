@@ -346,29 +346,29 @@ export default defineComponent({
 
 ## Properties
 
-| Property          | Attribute          | Description                                                                                                                                                                                                                 | Type                                                    | Default     |
-| ----------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------- |
-| `animated`        | `animated`         | If `true`, the action sheet will animate.                                                                                                                                                                                   | `boolean`                                               | `true`      |
-| `backdropDismiss` | `backdrop-dismiss` | If `true`, the action sheet will be dismissed when the backdrop is clicked.                                                                                                                                                 | `boolean`                                               | `true`      |
-| `buttons`         | --                 | An array of buttons for the action sheet.                                                                                                                                                                                   | `(string \| ActionSheetButton)[]`                       | `[]`        |
-| `cssClass`        | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                            | `string \| string[] \| undefined`                       | `undefined` |
-| `enterAnimation`  | --                 | Animation to use when the action sheet is presented.                                                                                                                                                                        | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `header`          | `header`           | Title for the action sheet.                                                                                                                                                                                                 | `string \| undefined`                                   | `undefined` |
-| `keyboardClose`   | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                      | `boolean`                                               | `true`      |
-| `leaveAnimation`  | --                 | Animation to use when the action sheet is dismissed.                                                                                                                                                                        | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `mode`            | `mode`             | The mode determines which platform styles to use.                                                                                                                                                                           | `"ios" \| "md"`                                         | `undefined` |
-| `subHeader`       | `sub-header`       | Subtitle for the action sheet.                                                                                                                                                                                              | `string \| undefined`                                   | `undefined` |
-| `translucent`     | `translucent`      | If `true`, the action sheet will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). | `boolean`                                               | `false`     |
+| Property          | Attribute          | Description                                                                                                                                                                                                                 | Type                              | Default     |
+| ----------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `animated`        | `animated`         | If `true`, the action sheet will animate.                                                                                                                                                                                   | `boolean`                         | `true`      |
+| `backdropDismiss` | `backdrop-dismiss` | If `true`, the action sheet will be dismissed when the backdrop is clicked.                                                                                                                                                 | `boolean`                         | `true`      |
+| `buttons`         | --                 | An array of buttons for the action sheet.                                                                                                                                                                                   | `any[]`                           | `[]`        |
+| `cssClass`        | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                            | `string \| string[] \| undefined` | `undefined` |
+| `enterAnimation`  | `enter-animation`  | Animation to use when the action sheet is presented.                                                                                                                                                                        | `any`                             | `undefined` |
+| `header`          | `header`           | Title for the action sheet.                                                                                                                                                                                                 | `string \| undefined`             | `undefined` |
+| `keyboardClose`   | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                      | `boolean`                         | `true`      |
+| `leaveAnimation`  | `leave-animation`  | Animation to use when the action sheet is dismissed.                                                                                                                                                                        | `any`                             | `undefined` |
+| `mode`            | `mode`             | The mode determines which platform styles to use.                                                                                                                                                                           | `"ios" \| "md"`                   | `undefined` |
+| `subHeader`       | `sub-header`       | Subtitle for the action sheet.                                                                                                                                                                                              | `string \| undefined`             | `undefined` |
+| `translucent`     | `translucent`      | If `true`, the action sheet will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). | `boolean`                         | `false`     |
 
 
 ## Events
 
-| Event                       | Description                             | Type                                   |
-| --------------------------- | --------------------------------------- | -------------------------------------- |
-| `ionActionSheetDidDismiss`  | Emitted after the alert has dismissed.  | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionActionSheetDidPresent`  | Emitted after the alert has presented.  | `CustomEvent<void>`                    |
-| `ionActionSheetWillDismiss` | Emitted before the alert has dismissed. | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionActionSheetWillPresent` | Emitted before the alert has presented. | `CustomEvent<void>`                    |
+| Event                       | Description                             | Type                |
+| --------------------------- | --------------------------------------- | ------------------- |
+| `ionActionSheetDidDismiss`  | Emitted after the alert has dismissed.  | `CustomEvent<any>`  |
+| `ionActionSheetDidPresent`  | Emitted after the alert has presented.  | `CustomEvent<void>` |
+| `ionActionSheetWillDismiss` | Emitted before the alert has dismissed. | `CustomEvent<any>`  |
+| `ionActionSheetWillPresent` | Emitted before the alert has presented. | `CustomEvent<void>` |
 
 
 ## Methods
@@ -389,7 +389,7 @@ Returns a promise that resolves when the action sheet did dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 
@@ -399,7 +399,7 @@ Returns a promise that resolves when the action sheet will dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 

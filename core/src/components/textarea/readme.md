@@ -272,7 +272,7 @@ export default defineComponent({
 | `autocapitalize` | `autocapitalize` | Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.                                                                                                                                                      | `string`                                                                                           | `'none'`       |
 | `autofocus`      | `autofocus`      | This Boolean attribute lets you specify that a form control should have input focus when the page loads.                                                                                                                                                               | `boolean`                                                                                          | `false`        |
 | `clearOnEdit`    | `clear-on-edit`  | If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.                                                                                                                               | `boolean`                                                                                          | `false`        |
-| `color`          | `color`          | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). | `string \| undefined`                                                                              | `undefined`    |
+| `color`          | `color`          | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). | `any`                                                                                              | `undefined`    |
 | `cols`           | `cols`           | The visible width of the text control, in average character widths. If it is specified, it must be a positive integer.                                                                                                                                                 | `number \| undefined`                                                                              | `undefined`    |
 | `debounce`       | `debounce`       | Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke.                                                                                                                                                                | `number`                                                                                           | `0`            |
 | `disabled`       | `disabled`       | If `true`, the user cannot interact with the textarea.                                                                                                                                                                                                                 | `boolean`                                                                                          | `false`        |
@@ -293,12 +293,12 @@ export default defineComponent({
 
 ## Events
 
-| Event       | Description                               | Type                                     |
-| ----------- | ----------------------------------------- | ---------------------------------------- |
-| `ionBlur`   | Emitted when the input loses focus.       | `CustomEvent<FocusEvent>`                |
-| `ionChange` | Emitted when the input value has changed. | `CustomEvent<TextareaChangeEventDetail>` |
-| `ionFocus`  | Emitted when the input has focus.         | `CustomEvent<FocusEvent>`                |
-| `ionInput`  | Emitted when a keyboard input occurred.   | `CustomEvent<KeyboardEvent>`             |
+| Event       | Description                               | Type                         |
+| ----------- | ----------------------------------------- | ---------------------------- |
+| `ionBlur`   | Emitted when the input loses focus.       | `CustomEvent<FocusEvent>`    |
+| `ionChange` | Emitted when the input value has changed. | `CustomEvent<any>`           |
+| `ionFocus`  | Emitted when the input has focus.         | `CustomEvent<FocusEvent>`    |
+| `ionInput`  | Emitted when a keyboard input occurred.   | `CustomEvent<KeyboardEvent>` |
 
 
 ## Methods

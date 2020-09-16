@@ -269,30 +269,30 @@ export default defineComponent({
 
 ## Properties
 
-| Property          | Attribute          | Description                                                                                                                                                                                                                      | Type                                                                                                            | Default     |
-| ----------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | ----------- |
-| `animated`        | `animated`         | If `true`, the loading indicator will animate.                                                                                                                                                                                   | `boolean`                                                                                                       | `true`      |
-| `backdropDismiss` | `backdrop-dismiss` | If `true`, the loading indicator will be dismissed when the backdrop is clicked.                                                                                                                                                 | `boolean`                                                                                                       | `false`     |
-| `cssClass`        | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                                 | `string \| string[] \| undefined`                                                                               | `undefined` |
-| `duration`        | `duration`         | Number of milliseconds to wait before dismissing the loading indicator.                                                                                                                                                          | `number`                                                                                                        | `0`         |
-| `enterAnimation`  | --                 | Animation to use when the loading indicator is presented.                                                                                                                                                                        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                         | `undefined` |
-| `keyboardClose`   | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                           | `boolean`                                                                                                       | `true`      |
-| `leaveAnimation`  | --                 | Animation to use when the loading indicator is dismissed.                                                                                                                                                                        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                         | `undefined` |
-| `message`         | `message`          | Optional text content to display in the loading indicator.                                                                                                                                                                       | `IonicSafeString \| string \| undefined`                                                                        | `undefined` |
-| `mode`            | `mode`             | The mode determines which platform styles to use.                                                                                                                                                                                | `"ios" \| "md"`                                                                                                 | `undefined` |
-| `showBackdrop`    | `show-backdrop`    | If `true`, a backdrop will be displayed behind the loading indicator.                                                                                                                                                            | `boolean`                                                                                                       | `true`      |
-| `spinner`         | `spinner`          | The name of the spinner to display.                                                                                                                                                                                              | `"bubbles" \| "circles" \| "circular" \| "crescent" \| "dots" \| "lines" \| "lines-small" \| null \| undefined` | `undefined` |
-| `translucent`     | `translucent`      | If `true`, the loading indicator will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). | `boolean`                                                                                                       | `false`     |
+| Property          | Attribute          | Description                                                                                                                                                                                                                      | Type                                     | Default     |
+| ----------------- | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----------- |
+| `animated`        | `animated`         | If `true`, the loading indicator will animate.                                                                                                                                                                                   | `boolean`                                | `true`      |
+| `backdropDismiss` | `backdrop-dismiss` | If `true`, the loading indicator will be dismissed when the backdrop is clicked.                                                                                                                                                 | `boolean`                                | `false`     |
+| `cssClass`        | `css-class`        | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                                 | `string \| string[] \| undefined`        | `undefined` |
+| `duration`        | `duration`         | Number of milliseconds to wait before dismissing the loading indicator.                                                                                                                                                          | `number`                                 | `0`         |
+| `enterAnimation`  | `enter-animation`  | Animation to use when the loading indicator is presented.                                                                                                                                                                        | `any`                                    | `undefined` |
+| `keyboardClose`   | `keyboard-close`   | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                           | `boolean`                                | `true`      |
+| `leaveAnimation`  | `leave-animation`  | Animation to use when the loading indicator is dismissed.                                                                                                                                                                        | `any`                                    | `undefined` |
+| `message`         | `message`          | Optional text content to display in the loading indicator.                                                                                                                                                                       | `IonicSafeString \| string \| undefined` | `undefined` |
+| `mode`            | `mode`             | The mode determines which platform styles to use.                                                                                                                                                                                | `"ios" \| "md"`                          | `undefined` |
+| `showBackdrop`    | `show-backdrop`    | If `true`, a backdrop will be displayed behind the loading indicator.                                                                                                                                                            | `boolean`                                | `true`      |
+| `spinner`         | `spinner`          | The name of the spinner to display.                                                                                                                                                                                              | `any`                                    | `undefined` |
+| `translucent`     | `translucent`      | If `true`, the loading indicator will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). | `boolean`                                | `false`     |
 
 
 ## Events
 
-| Event                   | Description                               | Type                                   |
-| ----------------------- | ----------------------------------------- | -------------------------------------- |
-| `ionLoadingDidDismiss`  | Emitted after the loading has dismissed.  | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionLoadingDidPresent`  | Emitted after the loading has presented.  | `CustomEvent<void>`                    |
-| `ionLoadingWillDismiss` | Emitted before the loading has dismissed. | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionLoadingWillPresent` | Emitted before the loading has presented. | `CustomEvent<void>`                    |
+| Event                   | Description                               | Type                |
+| ----------------------- | ----------------------------------------- | ------------------- |
+| `ionLoadingDidDismiss`  | Emitted after the loading has dismissed.  | `CustomEvent<any>`  |
+| `ionLoadingDidPresent`  | Emitted after the loading has presented.  | `CustomEvent<void>` |
+| `ionLoadingWillDismiss` | Emitted before the loading has dismissed. | `CustomEvent<any>`  |
+| `ionLoadingWillPresent` | Emitted before the loading has presented. | `CustomEvent<void>` |
 
 
 ## Methods
@@ -313,7 +313,7 @@ Returns a promise that resolves when the loading did dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 
@@ -323,7 +323,7 @@ Returns a promise that resolves when the loading will dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 

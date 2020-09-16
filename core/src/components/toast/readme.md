@@ -275,31 +275,31 @@ export default {
 
 ## Properties
 
-| Property         | Attribute        | Description                                                                                                                                                                                                                                                            | Type                                                    | Default     |
-| ---------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------- |
-| `animated`       | `animated`       | If `true`, the toast will animate.                                                                                                                                                                                                                                     | `boolean`                                               | `true`      |
-| `buttons`        | --               | An array of buttons for the toast.                                                                                                                                                                                                                                     | `(string \| ToastButton)[] \| undefined`                | `undefined` |
-| `color`          | `color`          | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). | `string \| undefined`                                   | `undefined` |
-| `cssClass`       | `css-class`      | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                                                                       | `string \| string[] \| undefined`                       | `undefined` |
-| `duration`       | `duration`       | How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called.                                                                                                                                                           | `number`                                                | `0`         |
-| `enterAnimation` | --               | Animation to use when the toast is presented.                                                                                                                                                                                                                          | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `header`         | `header`         | Header to be shown in the toast.                                                                                                                                                                                                                                       | `string \| undefined`                                   | `undefined` |
-| `keyboardClose`  | `keyboard-close` | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                                                                 | `boolean`                                               | `false`     |
-| `leaveAnimation` | --               | Animation to use when the toast is dismissed.                                                                                                                                                                                                                          | `((baseEl: any, opts?: any) => Animation) \| undefined` | `undefined` |
-| `message`        | `message`        | Message to be shown in the toast.                                                                                                                                                                                                                                      | `IonicSafeString \| string \| undefined`                | `undefined` |
-| `mode`           | `mode`           | The mode determines which platform styles to use.                                                                                                                                                                                                                      | `"ios" \| "md"`                                         | `undefined` |
-| `position`       | `position`       | The position of the toast on the screen.                                                                                                                                                                                                                               | `"bottom" \| "middle" \| "top"`                         | `'bottom'`  |
-| `translucent`    | `translucent`    | If `true`, the toast will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).                                                   | `boolean`                                               | `false`     |
+| Property         | Attribute         | Description                                                                                                                                                                                                                                                            | Type                                     | Default     |
+| ---------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ----------- |
+| `animated`       | `animated`        | If `true`, the toast will animate.                                                                                                                                                                                                                                     | `boolean`                                | `true`      |
+| `buttons`        | --                | An array of buttons for the toast.                                                                                                                                                                                                                                     | `any[] \| undefined`                     | `undefined` |
+| `color`          | `color`           | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). | `any`                                    | `undefined` |
+| `cssClass`       | `css-class`       | Additional classes to apply for custom CSS. If multiple classes are provided they should be separated by spaces.                                                                                                                                                       | `string \| string[] \| undefined`        | `undefined` |
+| `duration`       | `duration`        | How many milliseconds to wait before hiding the toast. By default, it will show until `dismiss()` is called.                                                                                                                                                           | `number`                                 | `0`         |
+| `enterAnimation` | `enter-animation` | Animation to use when the toast is presented.                                                                                                                                                                                                                          | `any`                                    | `undefined` |
+| `header`         | `header`          | Header to be shown in the toast.                                                                                                                                                                                                                                       | `string \| undefined`                    | `undefined` |
+| `keyboardClose`  | `keyboard-close`  | If `true`, the keyboard will be automatically dismissed when the overlay is presented.                                                                                                                                                                                 | `boolean`                                | `false`     |
+| `leaveAnimation` | `leave-animation` | Animation to use when the toast is dismissed.                                                                                                                                                                                                                          | `any`                                    | `undefined` |
+| `message`        | `message`         | Message to be shown in the toast.                                                                                                                                                                                                                                      | `IonicSafeString \| string \| undefined` | `undefined` |
+| `mode`           | `mode`            | The mode determines which platform styles to use.                                                                                                                                                                                                                      | `"ios" \| "md"`                          | `undefined` |
+| `position`       | `position`        | The position of the toast on the screen.                                                                                                                                                                                                                               | `"bottom" \| "middle" \| "top"`          | `'bottom'`  |
+| `translucent`    | `translucent`     | If `true`, the toast will be translucent. Only applies when the mode is `"ios"` and the device supports [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).                                                   | `boolean`                                | `false`     |
 
 
 ## Events
 
-| Event                 | Description                             | Type                                   |
-| --------------------- | --------------------------------------- | -------------------------------------- |
-| `ionToastDidDismiss`  | Emitted after the toast has dismissed.  | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionToastDidPresent`  | Emitted after the toast has presented.  | `CustomEvent<void>`                    |
-| `ionToastWillDismiss` | Emitted before the toast has dismissed. | `CustomEvent<OverlayEventDetail<any>>` |
-| `ionToastWillPresent` | Emitted before the toast has presented. | `CustomEvent<void>`                    |
+| Event                 | Description                             | Type                |
+| --------------------- | --------------------------------------- | ------------------- |
+| `ionToastDidDismiss`  | Emitted after the toast has dismissed.  | `CustomEvent<any>`  |
+| `ionToastDidPresent`  | Emitted after the toast has presented.  | `CustomEvent<void>` |
+| `ionToastWillDismiss` | Emitted before the toast has dismissed. | `CustomEvent<any>`  |
+| `ionToastWillPresent` | Emitted before the toast has presented. | `CustomEvent<void>` |
 
 
 ## Methods
@@ -320,7 +320,7 @@ Returns a promise that resolves when the toast did dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 
@@ -330,7 +330,7 @@ Returns a promise that resolves when the toast will dismiss.
 
 #### Returns
 
-Type: `Promise<OverlayEventDetail<T>>`
+Type: `Promise<any>`
 
 
 

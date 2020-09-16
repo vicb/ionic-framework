@@ -60,10 +60,10 @@ In order to configure this relationship between components (to load/select) and 
 
 ## Events
 
-| Event                | Description                                     | Type                             |
-| -------------------- | ----------------------------------------------- | -------------------------------- |
-| `ionRouteDidChange`  | Emitted when the route had changed              | `CustomEvent<RouterEventDetail>` |
-| `ionRouteWillChange` | Event emitted when the route is about to change | `CustomEvent<RouterEventDetail>` |
+| Event                | Description                                     | Type               |
+| -------------------- | ----------------------------------------------- | ------------------ |
+| `ionRouteDidChange`  | Emitted when the route had changed              | `CustomEvent<any>` |
+| `ionRouteWillChange` | Event emitted when the route is about to change | `CustomEvent<any>` |
 
 
 ## Methods
@@ -78,7 +78,7 @@ Type: `Promise<void>`
 
 
 
-### `push(url: string, direction?: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<boolean>`
+### `push(url: string, direction?: any, animation?: any) => Promise<boolean>`
 
 Navigate to the specified URL.
 

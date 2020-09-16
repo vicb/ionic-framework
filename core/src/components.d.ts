@@ -1388,7 +1388,7 @@ export namespace Components {
           * Returns `true` if the current view can go back.
           * @param view The view to check.
          */
-        "canGoBack": (view?: ViewController | undefined) => Promise<boolean>;
+        "canGoBack": (view?: any) => Promise<boolean>;
         "delegate"?: FrameworkDelegate;
         /**
           * Get the active view.
@@ -1403,7 +1403,7 @@ export namespace Components {
           * Get the previous view.
           * @param view The view to get.
          */
-        "getPrevious": (view?: ViewController | undefined) => Promise<ViewController | undefined>;
+        "getPrevious": (view?: any) => Promise<ViewController | undefined>;
         "getRouteId": () => Promise<RouteID | undefined>;
         /**
           * Inserts a component into the navigation stack at the specified index. This is useful to add a component at any point in the navigation stack.
@@ -1413,7 +1413,7 @@ export namespace Components {
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "insert": <T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "insert": <T extends any>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Inserts an array of components into the navigation stack at the specified index. The last component in the array will become instantiated as a view, and animate in to become the active view.
           * @param insertIndex The index to insert the components at in the stack.
@@ -1421,26 +1421,26 @@ export namespace Components {
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "insertPages": (insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "insertPages": (insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Pop a component off of the navigation stack. Navigates back from the current component.
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "pop": (opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "pop": (opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Pop to a specific index in the navigation stack.
           * @param indexOrViewCtrl The index or view controller to pop to.
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "popTo": (indexOrViewCtrl: number | ViewController, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "popTo": (indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Navigate back to the root of the stack, no matter how far back that is.
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "popToRoot": (opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "popToRoot": (opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Push a new component onto the current navigation stack. Pass any additional information along as an object. This additional information is accessible through NavParams.
           * @param component The component to push onto the navigation stack.
@@ -1448,7 +1448,7 @@ export namespace Components {
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "push": <T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "push": <T extends any>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Removes a component from the navigation stack at the specified index.
           * @param startIndex The number to begin removal at.
@@ -1456,7 +1456,7 @@ export namespace Components {
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "removeIndex": (startIndex: number, removeCount?: number, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "removeIndex": (startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Root NavComponent to load
          */
@@ -1471,7 +1471,7 @@ export namespace Components {
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "setPages": (views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
+        "setPages": (views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: any) => Promise<boolean>;
         /**
           * Set the root for the current navigation stack to a component.
           * @param component The component to set as the root of the navigation stack.
@@ -1479,8 +1479,8 @@ export namespace Components {
           * @param opts The navigation options.
           * @param done The transition complete function.
          */
-        "setRoot": <T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>;
-        "setRouteId": (id: string, params: ComponentProps | undefined, direction: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<RouteWrite>;
+        "setRoot": <T extends any>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: any) => Promise<boolean>;
+        "setRouteId": (id: string, params: ComponentProps | undefined, direction: any, animation?: any) => Promise<RouteWrite>;
         /**
           * If the nav component should allow for swipe-to-go-back.
          */
@@ -1895,14 +1895,14 @@ export namespace Components {
          */
         "back": () => Promise<void>;
         "canTransition": () => Promise<string | boolean>;
-        "navChanged": (direction: RouterDirection) => Promise<boolean>;
+        "navChanged": (direction: any) => Promise<boolean>;
         "printDebug": () => Promise<void>;
         /**
           * Navigate to the specified URL.
           * @param url The url to navigate to.
           * @param direction The direction of the animation. Defaults to `"forward"`.
          */
-        "push": (url: string, direction?: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<boolean>;
+        "push": (url: string, direction?: any, animation?: any) => Promise<boolean>;
         /**
           * By default `ion-router` will match the routes at the root path ("/"). That can be changed when
          */
@@ -1947,14 +1947,14 @@ export namespace Components {
           * By default `ion-nav` animates transition between pages based in the mode (ios or material design). However, this property allows to create custom transition using `AnimateBuilder` functions.
          */
         "animation"?: AnimationBuilder;
-        "commit": (enteringEl: HTMLElement, leavingEl: HTMLElement | undefined, opts?: RouterOutletOptions | undefined) => Promise<boolean>;
+        "commit": (enteringEl: HTMLElement, leavingEl: HTMLElement | undefined, opts?: any) => Promise<boolean>;
         "delegate"?: FrameworkDelegate;
         "getRouteId": () => Promise<RouteID | undefined>;
         /**
           * The mode determines which platform styles to use.
          */
-        "mode": "ios" | "md";
-        "setRouteId": (id: string, params: ComponentProps | undefined, direction: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<RouteWrite>;
+        "mode": any;
+        "setRouteId": (id: string, params: ComponentProps | undefined, direction: any, animation?: any) => Promise<RouteWrite>;
         "swipeHandler"?: SwipeGestureHandler;
     }
     interface IonRow {
@@ -5221,7 +5221,7 @@ declare namespace LocalJSX {
         /**
           * The mode determines which platform styles to use.
          */
-        "mode"?: "ios" | "md";
+        "mode"?: any;
         "onIonNavDidChange"?: (event: CustomEvent<void>) => void;
         "onIonNavWillChange"?: (event: CustomEvent<void>) => void;
         "onIonNavWillLoad"?: (event: CustomEvent<void>) => void;

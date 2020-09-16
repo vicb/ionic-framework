@@ -568,7 +568,7 @@ export default defineComponent({
 
 | Property     | Attribute    | Description                                                                                                                                                                                                                                                            | Type                          | Default     |
 | ------------ | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ----------- |
-| `color`      | `color`      | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). | `string \| undefined`         | `undefined` |
+| `color`      | `color`      | The color to use from your application's color palette. Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`. For more information on colors, see [theming](/docs/theming/basics). | `any`                         | `undefined` |
 | `disabled`   | `disabled`   | If `true`, the user cannot interact with the segment.                                                                                                                                                                                                                  | `boolean`                     | `false`     |
 | `mode`       | `mode`       | The mode determines which platform styles to use.                                                                                                                                                                                                                      | `"ios" \| "md"`               | `undefined` |
 | `scrollable` | `scrollable` | If `true`, the segment buttons will overflow and the user can swipe to see them. In addition, this will disable the gesture to drag the indicator between the buttons in order to swipe to see hidden buttons.                                                         | `boolean`                     | `false`     |
@@ -577,9 +577,9 @@ export default defineComponent({
 
 ## Events
 
-| Event       | Description                                                                                                | Type                                    |
-| ----------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| `ionChange` | Emitted when the value property has changed and any dragging pointer has been released from `ion-segment`. | `CustomEvent<SegmentChangeEventDetail>` |
+| Event       | Description                                                                                                | Type               |
+| ----------- | ---------------------------------------------------------------------------------------------------------- | ------------------ |
+| `ionChange` | Emitted when the value property has changed and any dragging pointer has been released from `ion-segment`. | `CustomEvent<any>` |
 
 
 ## CSS Custom Properties
