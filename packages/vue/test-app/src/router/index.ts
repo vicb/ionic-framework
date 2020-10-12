@@ -23,6 +23,10 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/Slides.vue')
   },
   {
+    path: '/infinite-scroll',
+    component: () => import('@/views/InfiniteScroll.vue')
+  },
+  {
     path: '/default-href',
     component: () => import('@/views/DefaultHref.vue')
   },

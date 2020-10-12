@@ -35,6 +35,9 @@
         <ion-item router-link="/tabs" id="tabs">
           <ion-label>Tabs</ion-label>
         </ion-item>
+        <ion-item router-link="/infinite-scroll" id="infinite-scroll">
+          <ion-label>Infinite Scroll</ion-label>
+        </ion-item>
       </ion-list>
 
     </ion-content>
