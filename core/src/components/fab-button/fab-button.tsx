@@ -126,51 +126,22 @@ export class FabButton implements ComponentInterface, AnchorInterface, ButtonInt
   }
 
   render() {
-    const { el, disabled, color, href, activated, show, translucent, size } = this;
+    const { el, show } = this;
     const inList = hostContext('ion-fab-list', el);
     const mode = getIonMode(this);
-    const TagType = href === undefined ? 'button' : 'a' as any;
-    const attrs = (TagType === 'button')
-      ? { type: this.type }
-      : {
-        download: this.download,
-        href,
-        rel: this.rel,
-        target: this.target
-      };
 
     return (
       <Host
-        aria-disabled={disabled ? 'true' : null}
-        class={createColorClasses(color, {
+        class={{
           [mode]: true,
           'fab-button-in-list': inList,
-          'fab-button-translucent-in-list': inList && translucent,
-          'fab-button-close-active': activated,
           'fab-button-show': show,
-          'fab-button-disabled': disabled,
-          'fab-button-translucent': translucent,
-          'ion-activatable': true,
-          'ion-focusable': true,
-          [`fab-button-${size}`]: size !== undefined,
-        })}
+        }}
       >
 
-        <TagType
-          {...attrs}
-          class="button-native"
-          part="native"
-          disabled={disabled}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
-          onClick={(ev: Event) => openURL(href, ev, this.routerDirection, this.routerAnimation)}
-        >
-          <ion-icon icon={this.closeIcon} part="close-icon" class="close-icon" lazy={false}></ion-icon>
-          <span class="button-inner">
-            <slot></slot>
-          </span>
-          {mode === 'md' && <ion-ripple-effect></ion-ripple-effect>}
-        </TagType>
+        <button class="button-native">
+          Hello
+        </button>
       </Host>
     );
   }
