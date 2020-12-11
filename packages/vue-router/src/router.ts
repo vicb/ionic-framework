@@ -148,7 +148,7 @@ export const createIonRouter = (opts: IonicVueRouterOptions, router: Router) => 
         } else if (action === 'pop') {
           const routeInfo = locationHistory.current();
           if (routeInfo && routeInfo.pushedByRoute) {
-            const prevRouteInfo = locationHistory.findLastLocation(routeInfo);
+            const prevRouteInfo = locationHistory.findLastLocation(routeInfo, location.fullPath);
             incomingRouteParams = {
               ...prevRouteInfo,
               routerAction: 'pop',

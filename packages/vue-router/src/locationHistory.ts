@@ -122,13 +122,20 @@ export const createLocationHistory = () => {
     return undefined;
   }
 
-  const findLastLocation = (routeInfo: RouteInfo): RouteInfo | undefined => {
+  const findLastLocation = (routeInfo: RouteInfo, toPath?: string): RouteInfo | undefined => {
     const routeInfos = getTabsHistory(routeInfo.tab);
+    const foundRouteInfo = (ri: RouteInfo) => {
+      if (toPath !== undefined) {
+        return ri.pathname === toPath;
+      } else {
+        return ri.pathname === routeInfo.pushedByRoute;
+      }
+    }
     if (routeInfos) {
       for (let i = routeInfos.length - 2; i >= 0; i--) {
         const ri = routeInfos[i];
         if (ri) {
-          if (ri.pathname === routeInfo.pushedByRoute) {
+          if (foundRouteInfo(ri)) {
             return ri;
           }
         }
@@ -137,7 +144,7 @@ export const createLocationHistory = () => {
     for (let i = locationHistory.length - 2; i >= 0; i--) {
       const ri = locationHistory[i];
       if (ri) {
-        if (ri.pathname === routeInfo.pushedByRoute) {
+        if (foundRouteInfo(ri)) {
           return ri;
         }
       }

@@ -128,13 +128,20 @@ export class LocationHistory {
     return undefined;
   }
 
-  findLastLocation(routeInfo: RouteInfo) {
+  findLastLocation(routeInfo: RouteInfo, toPath?: string) {
     const routeInfos = this._getRouteInfosByKey(routeInfo.tab);
+    const foundRouteInfo = (ri: RouteInfo) => {
+      if (toPath !== undefined) {
+        return ri.pathname === toPath;
+      } else {
+        return ri.pathname === routeInfo.pushedByRoute;
+      }
+    }
     if (routeInfos) {
       for (let i = routeInfos.length - 2; i >= 0; i--) {
         const ri = routeInfos[i];
         if (ri) {
-          if (ri.pathname === routeInfo.pushedByRoute) {
+          if (foundRouteInfo(ri)) {
             return ri;
           }
         }
@@ -143,7 +150,7 @@ export class LocationHistory {
     for (let i = this.locationHistory.length - 2; i >= 0; i--) {
       const ri = this.locationHistory[i];
       if (ri) {
-        if (ri.pathname === routeInfo.pushedByRoute) {
+        if (foundRouteInfo(ri)) {
           return ri;
         }
       }
